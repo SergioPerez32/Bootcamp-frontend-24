@@ -53,3 +53,4 @@ class Seat{
 const c1 = new Cinema(5,5)
 c1.reserveSeat(1,1)
 c1.reserveSeat(2,2)
+c1.displaySeatStatus()
