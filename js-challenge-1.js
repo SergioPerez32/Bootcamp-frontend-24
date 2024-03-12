@@ -11,8 +11,7 @@ class Cinema{
             this.seats.push(rowSeats);
         }
 
-        // Log the state of the cinema
-        console.log("Estado inicial de la sala:");
+        console.log("Cinema status:");
         this.displaySeatStatus();
     }
 
@@ -21,7 +20,7 @@ class Cinema{
         for (let i = 0; i < this.rows; i++) {
             seatStatus += "[";
             for (let j = 0; j < this.seatsPerRow; j++) {
-                seatStatus += this.seats[i][j].isOccupied ? "X" : "O";
+                seatStatus += this.seats[i][j].isTaken ? "X" : "O";
                 if (j < this.seatsPerRow - 1) {
                     seatStatus += ",";
                 }
@@ -29,6 +28,17 @@ class Cinema{
             seatStatus += "]\n";
         }
         console.log(seatStatus);
+    }
+
+    reserveSeat(row, seatNumber) {
+        const seat = this.seats[row - 1][seatNumber - 1];
+        if (!seat.isTaken) {
+            seat.isTaken = true;
+            console.log(`${row}-${seatNumber} reserve succesful.`);
+        } else {
+            console.log(`${row}-${seatNumber} seat already taken.`);
+        }
+        this.displaySeatStatus();
     }
 }
 
@@ -41,3 +51,5 @@ class Seat{
 }
 
 const c1 = new Cinema(5,5)
+c1.reserveSeat(1,1)
+c1.reserveSeat(2,2)
