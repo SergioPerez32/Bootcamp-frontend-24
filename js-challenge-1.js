@@ -1,20 +1,34 @@
 class Cinema{
-    constructor(rows, seatsPerRow){
-        this.rows=rows
-        this.seatsPerRow=seatsPerRow
+    constructor(rows, seatsPerRow) {
+        this.rows = rows;
+        this.seatsPerRow = seatsPerRow;
         this.seats = [];
         for (let i = 0; i < this.rows; i++) {
-            this.seats.push([]);
+            const rowSeats = [];
             for (let j = 0; j < this.seatsPerRow; j++) {
-                this.seats[i].push(new Seat(i + 1, j + 1));
+                rowSeats.push(new Seat(i + 1, j + 1));
             }
+            this.seats.push(rowSeats);
         }
+
+        // Log the state of the cinema
+        console.log("Estado inicial de la sala:");
         this.displaySeatStatus();
     }
 
     displaySeatStatus() {
-        const seatStatus = this.seats.map(row => "[" + row.map(seat => seat.isOccupied ? "X" : "O").join(",") + "]");
-        console.log(seatStatus.join("\n"));
+        let seatStatus = "";
+        for (let i = 0; i < this.rows; i++) {
+            seatStatus += "[";
+            for (let j = 0; j < this.seatsPerRow; j++) {
+                seatStatus += this.seats[i][j].isOccupied ? "X" : "O";
+                if (j < this.seatsPerRow - 1) {
+                    seatStatus += ",";
+                }
+            }
+            seatStatus += "]\n";
+        }
+        console.log(seatStatus);
     }
 }
 
