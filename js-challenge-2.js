@@ -23,3 +23,25 @@ function rarestFromArray(arr) {
 
 console.log(rarestFromArray(arr2))
 console.log(rarestFromArray(arr1))
+
+function removeDuplicates(array) {
+  return array.reduce((accumulator, currentValue) => {
+      if (!accumulator.includes(currentValue)) {
+          accumulator.push(currentValue);
+      }
+      return accumulator;
+  }, []);
+}
+
+const arr3=[7,9,1,'a','a','f',9,4,2,'d','d']
+console.log(removeDuplicates(arr3))
+
+function concatenateArrays(arrays) {
+  const concatenatedArray = arrays.reduce((accumulator, currenteValue) => {
+      return accumulator.concat(currenteValue);
+  }, []);
+  return concatenatedArray.join(' ')
+}
+
+const arr4 = [['The','little','horse'],['Plane','over','the','ocean'],['Chocolate','ice','cream','is','awesome'],['This','is','a','long','sentence']]
+console.log(concatenateArrays(arr4))
