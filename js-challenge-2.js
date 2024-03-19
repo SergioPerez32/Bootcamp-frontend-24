@@ -45,3 +45,29 @@ function concatenateArrays(arrays) {
 
 const arr4 = [['The','little','horse'],['Plane','over','the','ocean'],['Chocolate','ice','cream','is','awesome'],['This','is','a','long','sentence']]
 console.log(concatenateArrays(arr4))
+
+function findUnpairedElement(array) {
+  const counter = {};
+  array.forEach(element => {
+      counter[element] = (counter[element] || 0) + 1;
+  });
+  for (const key in counter) {
+      if (counter.hasOwnProperty(key) && counter[key] === 1) {
+          return key;
+      }
+  }
+  return null;
+}
+
+const array1=[1,2,3,4,7,4,3,2,1]
+console.log(findUnpairedElement(array1))
+
+function delay(ms){
+  return new Promise((resolve)=>{
+      setTimeout(()=>{
+          resolve();
+      }, ms)
+  })
+}
+
+delay(3000).then(()=>{console.log('run after 3 seconds')})
