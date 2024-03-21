@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee ID Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .id-card {
+      width: fit-content;
+      background-color: red;
+      padding: 20px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    .company-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      background-color: white;
+    }
+    .employee-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      object-fit: cover;
+      background-color: black;
+    }
+    .employee-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+      background-color: black;
+    }
+    .employee-position {
+      font-size: 14px;
+      color: white;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="id-card">
+    <div class="company-name">Jalasoft</div>
+    <img class="employee-photo" src="employee-photo.jpg" alt="Employee Photo">
+    <div class="employee-name">John Doe</div>
+    <div class="employee-position">Developer</div>
+  </div>
+</body>
+</html>
