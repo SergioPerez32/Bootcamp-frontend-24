@@ -4,51 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee ID Card</title>
-  <style>
-    body {
-      font-family: Arial;
-      margin: 0;
-      padding: 0;
-    }
-    .id-card {
-      width: fit-content;
-      background-color: red;
-      padding: 20px;
-      margin: 50px auto;
-      text-align: center;
-    }
-    .company-name {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      background-color: white;
-    }
-    .employee-photo {
-      width: 150px;
-      height: 150px;
-      margin-bottom: 20px;
-      background-color: black;
-    }
-    .employee-name {
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 10px;
-      color: white;
-      background-color: black;
-    }
-    .employee-position {
-      font-size: 14px;
-      color: white;
-      background-color: red;
-    }
-  </style>
 </head>
 <body>
-  <div class="id-card">
-    <div class="company-name">Jalasoft</div>
-    <img class="employee-photo" src="employee-photo.jpg" alt="Employee Photo">
-    <div class="employee-name">John Doe</div>
-    <div class="employee-position">Developer</div>
-  </div>
+    <employee-id-card></employee-id-card>
+  <script>
+    class EmployeeIDCard extends HTMLElement {
+      constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'id-card';
+
+        const companyName = document.createElement('div');
+        companyName.className = 'company-name';
+        companyName.textContent = 'Jalasoft';
+
+        const employeePhoto = document.createElement('img');
+        employeePhoto.className = 'employee-photo';
+        employeePhoto.src = 'employee-photo.jpg';
+        employeePhoto.alt = 'Employee Photo';
+
+        const employeeName = document.createElement('div');
+        employeeName.className = 'employee-name';
+        employeeName.textContent = 'Sergio Perez';
+
+        const employeePosition = document.createElement('div');
+        employeePosition.className = 'employee-position';
+        employeePosition.textContent = 'Developer';
+
+        wrapper.appendChild(companyName);
+        wrapper.appendChild(employeePhoto);
+        wrapper.appendChild(employeeName);
+        wrapper.appendChild(employeePosition);
+        
+        shadow.appendChild(wrapper);
+
+        // Include styles within shadow DOM
+        const style = document.createElement('style');
+        style.textContent = `
+        .body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+          }
+          .id-card {
+            width: fit-content;
+            background-color: red;
+            padding: 20px;
+            margin: 50px auto;
+            text-align: center;
+          }
+          .company-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background-color: white;
+          }
+          .employee-photo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+            background-color: black;
+          }
+          .employee-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: white;
+            background-color: black;
+          }
+          .employee-position {
+            font-size: 14px;
+            color: white;
+            background-color: red;
+          }
+        `;
+        shadow.appendChild(style);
+      }
+    }
+
+    customElements.define('employee-id-card', EmployeeIDCard);
+  </script>
 </body>
 </html>
