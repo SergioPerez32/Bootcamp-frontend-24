@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee ID Card</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+    }
+    </style>
 </head>
 <body>
     <employee-id-card></employee-id-card>
@@ -40,11 +45,9 @@
         
         shadow.appendChild(wrapper);
 
-        // Include styles within shadow DOM
         const style = document.createElement('style');
         style.textContent = `
         .body {
-            font-family: Arial;
             margin: 0;
             padding: 0;
           }
