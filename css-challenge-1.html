@@ -29,23 +29,43 @@
     .card .card-title {
         text-align: left;
         font-size: 20px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         border: 2px solid black;
     }
 
     .card .card-image {
-        width: 90%;
-        height: 200px;
-        background-image: url('pathToImage');
+        height: 190px;
+        background-image: url('./dm.jpg');
         background-size: cover;
         background-position: center;
-        border: 1px solid grey;
-        border-radius: 5px;
+        border: 2px solid grey;
     }
 
+    .card .card-description {
+        text-align: left;
+        border: 2px solid chocolate;
+        font-size: 12px;
+    }
+    .card .card-description .stats {
+        display: flex;
+        font-size: 9px;
+        border: 1px solid chocolate;
+        justify-content: right;
+    }
 </style>
 </head>
 <body>
-    
+    <div class="card">
+        <div class="card-title">Dark Magician</div>
+        <div class="card-image"></div>
+        <div class="card-description">
+            Spellcaster / Effect<br>
+            The ultimate wizard in terms of attack and defense.
+            <div class="stats">
+                <div>ATK: 2500</div>
+                <div>DEF: 2100</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
