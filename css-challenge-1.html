@@ -29,41 +29,62 @@
     .card .card-title {
         text-align: left;
         font-size: 20px;
-        margin-bottom: 5px;
+        margin-bottom: 1px;
         border: 2px solid black;
+        flex: 0 0 auto;
+        height: 9%;
+    }
+
+    .card .stars {
+        height: 6%;
+        background-image: url('./7-stars.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position:center;
+        width: 55%;
+        margin-bottom: 3px;
+        flex: 0 0 auto;
+        align-self: flex-end;
     }
 
     .card .card-image {
-        height: 190px;
+        height: 60%;
         background-image: url('./dm.jpg');
         background-size: cover;
         background-position: center;
         border: 2px solid grey;
+        flex: 0 0 auto;
     }
 
     .card .card-description {
         text-align: left;
         border: 2px solid chocolate;
-        font-size: 12px;
+        font-size: 10px;
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        height: 20%;
     }
     .card .card-description .stats {
+        margin-top: auto;
         display: flex;
-        font-size: 9px;
+        font-size: 8px;
         border: 1px solid chocolate;
-        justify-content: right;
+        justify-content: flex-end;
+        height: 15%;
+        flex: 0 0 auto;
     }
 </style>
 </head>
 <body>
     <div class="card">
         <div class="card-title">Dark Magician</div>
+        <div class="stars"></div>
         <div class="card-image"></div>
         <div class="card-description">
-            Spellcaster / Effect<br>
-            The ultimate wizard in terms of attack and defense.
+            Spellcaster / Normal<br>The ultimate wizard in terms of attack and defense.
             <div class="stats">
-                <div>ATK: 2500</div>
-                <div>DEF: 2100</div>
+                <div>ATK: 2500 DEF: 2100</div>
             </div>
         </div>
     </div>
